@@ -2,7 +2,8 @@
 namespace App\models;
 
 // Product class creation with attributes
-class Product {
+class Product
+{
     public $id;
     public $title;
     public $price;
@@ -11,7 +12,8 @@ class Product {
     public $image;
 
     // Product class constructor
-    public function __construct($id, $title, $price, $description, $category, $image) {
+    public function __construct($id, $title, $price, $description, $category, $image)
+    {
         $this->id = $id;
         $this->title = $title;
         $this->price = $price;

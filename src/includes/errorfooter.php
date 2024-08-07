@@ -1,0 +1,22 @@
+<?php
+echo '<footer class="footer">';
+echo '<div class="container">';
+echo '<span class="text-muted">© 2024 - Hélène Finot </span>';
+echo '</div>';
+echo '</footer>';
+echo '<script src="/assets/js/jquery-2.1.0.min.js"></script>';
+echo '<script src="/assets/js/popper.js"></script>';
+echo '<script src="/assets/js/bootstrap.min.js"></script>';
+echo '<script src="/assets/js/owl-carousel.js"></script>';
+echo '<script src="/assets/js/accordions.js"></script>';
+echo '<script src="/assets/js/datepicker.js"></script>';
+echo '<script src="/assets/js/scrollreveal.min.js"></script>';
+echo '<script src="/assets/js/waypoints.min.js"></script>';
+echo '<script src="/assets/js/jquery.counterup.min.js"></script>';
+echo '<script src="/assets/js/imgfix.min.js"></script>';
+echo '<script src="/assets/js/slick.js"></script>';
+echo '<script src="/assets/js/lightbox.js"></script>';
+echo '<script src="/assets/js/isotope.js"></script>';
+echo '<script src="/assets/js/custom.js"></script>';
+echo '</body>';
+echo '</html>';
