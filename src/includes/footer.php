@@ -41,12 +41,19 @@
             </div>
         </div>
     </div>
+    <!-- jQuery (utilisation du CDN pour la dernière version) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- JavaScript at the end of the body for optimized loading -->
-    <script src="/assets/js/jquery-2.1.0.min.js"></script>
-    <script src="/assets/js/popper.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/owl-carousel.js"></script>
+    <!-- Popper.js (utilisation du CDN pour la dernière version) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+
+    <!-- Bootstrap Bundle (utilisation du CDN pour la dernière version) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Owl Carousel (utilisation du CDN pour la dernière version) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Autres bibliothèques JavaScript -->
     <script src="/assets/js/accordions.js"></script>
     <script src="/assets/js/datepicker.js"></script>
     <script src="/assets/js/scrollreveal.min.js"></script>
@@ -57,6 +64,7 @@
     <script src="/assets/js/lightbox.js"></script>
     <script src="/assets/js/isotope.js"></script>
     <script src="/assets/js/custom.js"></script>
+
 </footer>
 </body>
 </html>
