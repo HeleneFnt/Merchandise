@@ -1,12 +1,10 @@
 <!-- src/views/category.tpl.php -->
-<?php
-include __DIR__ . '/../includes/header.php';
-?>
 <div class="container">
+    <!-- Display the category name -->
     <h1>Products in Category: <?php echo htmlspecialchars($categoryName, ENT_QUOTES, 'UTF-8'); ?></h1>
 
     <!-- Display Products in Selected Category -->
-    <h2 class="mt-5">Products</h2>
+    <h2 class="mt-5">Products in <?= htmlspecialchars($categoryName, ENT_QUOTES, 'UTF-8'); ?></h2>
     <div class="row">
         <?php if (!empty($products)): ?>
             <?php foreach ($products as $product): ?>
@@ -17,7 +15,7 @@ include __DIR__ . '/../includes/header.php';
                             <h5 class="card-title"><?= htmlspecialchars($product->title, ENT_QUOTES, 'UTF-8'); ?></h5>
                             <p class="card-text"><?= htmlspecialchars($product->description, ENT_QUOTES, 'UTF-8'); ?></p>
                             <p class="card-text"><strong>Price:</strong> $<?= htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?></p>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="/product/<?= urlencode($product->id) ?>" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -28,26 +26,22 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <!-- Display Categories -->
-    <?php if (!empty($categories)): ?>
-        <h2 class="mt-5">Categories</h2>
-        <div class="row">
-            <?php foreach ($categories as $categoryName): ?>
-                <?php
-                $escapedCategory = htmlspecialchars($categoryName, ENT_QUOTES, 'UTF-8');
-                $encodedCategory = urlencode($escapedCategory);
-                ?>
-                <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $escapedCategory ?></h5>
-                            <a href="/category/<?= $encodedCategory ?>" class="btn btn-primary">View Products</a>
-                        </div>
+    <h2 class="mt-5">Categories</h2>
+    <div class="row">
+        <?php foreach ($categories as $category): ?>
+            <?php
+            // Escape and encode category names
+            $escapedCategory = htmlspecialchars($category, ENT_QUOTES, 'UTF-8');
+            $encodedCategory = urlencode($category);
+            ?>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $escapedCategory ?></h5>
+                        <a href="/category/<?= $encodedCategory ?>" class="btn btn-primary">View Products</a>
                     </div>
                 </div>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
-<?php
-include __DIR__ . '/../includes/footer.php';
-?>

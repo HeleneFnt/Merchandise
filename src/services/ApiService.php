@@ -28,4 +28,8 @@ class ApiService
         $url = "https://fakestoreapi.com/products?limit={$limit}";
         return $this->getApiData($url);
     }
+    public function fetchProductById($productId) {
+        $url = "https://fakestoreapi.com/products/{$productId}";
+        return $this->getApiData($url);
+    }
 }

@@ -1,5 +1,3 @@
-<!--TODO : Adapt Footer-->
-
 <footer>
     <div class="container">
         <div class="row">
@@ -20,7 +18,13 @@
                 <ul>
                     <?php if (isset($categories) && is_array($categories)): ?>
                         <?php foreach ($categories as $category): ?>
-                            <li><a href="category.tpl.php?name=<?= urlencode(htmlspecialchars($category, ENT_QUOTES, 'UTF-8')) ?>"><?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?></a></li>
+                            <?php
+                            // Escape special characters for HTML
+                            $escapedCategory = htmlspecialchars($category, ENT_QUOTES, 'UTF-8');
+                            // URL encode the category name for the link
+                            $encodedCategory = urlencode($category);
+                            ?>
+                            <li><a href="/category/<?= $encodedCategory ?>"><?= $escapedCategory ?></a></li>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <li><a href="#">No categories available</a></li>
@@ -29,13 +33,13 @@
             </div>
             <div class="col-lg-6">
                 <div class="under-footer">
-<!-- Following features comes from another PHP project -->
+                    <!-- Following features comes from another PHP project -->
                     <p class="text-muted">&copy; 2024 Le Campus Numérique in The Alps. <a href="https://www.linkedin.com/in/hélène-finot" target="_blank" rel="noopener noreferrer">Hélène Finot</a> Tous droits réservés.</p>
                     <?php if (isset($_SESSION['dateFirstVisit'])): ?>
-                        <p>Vous avez visité ce site pour la première fois le : <?= htmlspecialchars($_SESSION['dateFirstVisit']) ?></p>
+                        <p>Vous avez visité ce site pour la première fois le : <?= htmlspecialchars($_SESSION['dateFirstVisit'], ENT_QUOTES, 'UTF-8') ?></p>
                     <?php endif; ?>
                     <?php if (isset($_SESSION['countViewPage'])): ?>
-                        <p>Vous avez vu <?= htmlspecialchars($_SESSION['countViewPage']) ?> pages sur ce site.</p>
+                        <p>Vous avez vu <?= htmlspecialchars($_SESSION['countViewPage'], ENT_QUOTES, 'UTF-8') ?> pages sur ce site.</p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -64,7 +68,6 @@
     <script src="/assets/js/lightbox.js"></script>
     <script src="/assets/js/isotope.js"></script>
     <script src="/assets/js/custom.js"></script>
-
 </footer>
 </body>
 </html>

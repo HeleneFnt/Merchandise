@@ -1,10 +1,10 @@
 <?php
 // src/controllers/ProductController.php
 
-namespace Controllers;
+namespace App\Controllers;
 
 use App\services\ApiService;
-use App\models\Product;
+use App\Models\Product;
 
 class ProductController
 {
@@ -14,13 +14,14 @@ class ProductController
         $this->apiService = new ApiService();
     }
 
-    public function show($productId) {
+    public function showProduct($productId) {
         if (!is_numeric($productId) || $productId <= 0) {
             $this->handleError(400, "Invalid product ID.");
         }
 
         try {
             $productData = $this->apiService->fetchProductById($productId);
+            $categories = $this->apiService->fetchAllCategories();
         } catch (\Exception $e) {
             $this->handleError(500, $e->getMessage());
         }
@@ -30,17 +31,17 @@ class ProductController
         }
 
         $product = $this->mapToProduct($productData);
-        $this->renderView($product);
+        $this->renderView($product, $categories);
     }
 
     private function mapToProduct($product) {
         return new Product(
             $product['id'],
-            htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8')
+            $product['title'],
+            $product['price'],
+            $product['description'],
+            $product['category'],
+            $product['image']
         );
     }
 
@@ -50,9 +51,9 @@ class ProductController
         exit;
     }
 
-    private function renderView($product) {
+    private function renderView($product, $categories) {
         // Extract variables for use in the view
-        extract(compact('product'));
+        extract(compact('product', 'categories'));
 
         // Include the view files
         include __DIR__ . '/../includes/header.php';

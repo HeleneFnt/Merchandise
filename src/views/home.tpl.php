@@ -1,9 +1,7 @@
 <!-- src/views/home.tpl.php -->
-
 <div class="container">
     <h1>Merchandise</h1>
     <p>Welcome to our online store! We offer a wide range of products for all your needs.</p>
-
 </div>
 <div class="container mt-5">
     <!-- Slider -->
@@ -38,46 +36,37 @@
         </button>
     </div>
 
-    <!-- Liste des catégories -->
+    <!-- Display Categories -->
     <h2 class="mt-5">Categories</h2>
     <div class="row">
-        <?php
-        foreach ($categories as $category) {
+        <?php foreach ($categories as $category): ?>
+            <?php
+            // Escape and encode category names
             $escapedCategory = htmlspecialchars($category, ENT_QUOTES, 'UTF-8');
-            echo "
-        <div class='col-md-3'>
-            <div class='card'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$escapedCategory</h5>
-                    <a href='category.tpl.php?name=" . urlencode($escapedCategory) . "' class='btn btn-primary'>View Products</a>
+            $encodedCategory = urlencode($category);
+            ?>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $escapedCategory ?></h5>
+                        <a href="/category/<?= $encodedCategory ?>" class="btn btn-primary">View Products</a>
+                    </div>
                 </div>
             </div>
-        </div>";
-        }
-        ?>
-    </div>
-
-    <!-- Produits en vedette -->
-    <h2 class="mt-5">Featured Products</h2>
-    <div class="row">
-        <?php
-        foreach ($products as $product) {
-            $imageUrl = htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8');
-            $title = htmlspecialchars($product->title, ENT_QUOTES, 'UTF-8');
-            $price = htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8');
-            $id = htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8');
-            echo "
-        <div class='col-md-3'>
-            <div class='card'>
-                <img src='$imageUrl' class='card-img-top' alt='$title'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$title</h5>
-                    <p class='card-text'>\$$price</p>
-                    <a href='product.tpl.php?id=" . urlencode($id) . "' class='btn btn-primary'>View Details</a>
-                </div>
-            </div>
-        </div>";
-        }
-        ?>
+        <?php endforeach; ?>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            smartSpeed: 1000
+        });
+    });
+</script>

@@ -1,9 +1,9 @@
 <?php
 // src/controllers/HomeController.php
-namespace Controllers;
+namespace App\Controllers;
 
 use App\services\ApiService;
-use App\models\Product;
+use App\Models\Product;
 
 class HomeController
 {
@@ -32,11 +32,11 @@ class HomeController
     private function mapToProduct($product) {
         return new Product(
             $product['id'],
-            htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8')
+            $product['title'],
+            $product['price'],
+            $product['description'],
+            $product['category'],
+            $product['image']
         );
     }
 
