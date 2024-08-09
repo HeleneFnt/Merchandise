@@ -2,9 +2,9 @@
 // public/index.php
 
 require '../vendor/autoload.php';
-require '../src/controllers/HomeController.php';
+require '../src/Controllers/HomeController.php';
 
-use Controllers\HomeController;
+use App\Controllers\HomeController;
 
 // Create a new instance of the HomeController class
 $controller = new HomeController();

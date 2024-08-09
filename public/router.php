@@ -1,23 +1,34 @@
 <?php
-// file router.php working as a FrontController
+// Start a session for managing data
+session_start();
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/controllers/HomeController.php';
+// Require Composer's autoload file
+require_once '../vendor/autoload.php';
 
-// Parse the request URI to determine the path
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$path = trim($path, '/');
+// Create instances of Controllers
+$homeController = new \App\Controllers\HomeController();
+$categoryController = new \App\Controllers\CategoryController();
+$productController = new \App\Controllers\ProductController();
 
+// Parse the URL to determine which page to show
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// Route the request based on the path
-if ($path === '' || $path === 'index.php') {
-    // If the path is root or index.php, route to HomeController's index method
-    (new HomeController())->index();
+// Router
+if ($requestUri === '/' || $requestUri === '/index.php') {
+    // Home page
+    $homeController->showHome();
+} elseif (preg_match('/^\/category\/(.+)$/', $requestUri, $matches)) {
+    // Category page with a slug
+    $slug = urldecode($matches[1]); // Decode URL-encoded category name
+    $categoryController->showCategory($slug);
+} elseif (preg_match('/^\/product\/(\d+)$/', $requestUri, $matches)) {
+    // Product page with an ID
+    $productId = (int)$matches[1];
+    $productController->showProduct($productId);
 } else {
-    // If none of the above conditions match, return a 404 Not Found status
+    // 404 Page Not Found
     http_response_code(404);
-    // Include the 404.tpl.php page
-    include __DIR__ . '/../src/includes/errorheader.php';
-    include __DIR__ . '/../src/views/404.tpl.php';
-    include __DIR__ . '/../src/includes/errorfooter.php';
+    require '../src/includes/errorheader.php';
+    require '../src/views/404.tpl.php';
+    require '../src/includes/errorfooter.php';
 }
