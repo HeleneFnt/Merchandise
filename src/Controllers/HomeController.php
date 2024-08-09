@@ -1,9 +1,9 @@
 <?php
-// src/controllers/HomeController.php
-namespace Controllers;
+// src/Controllers/HomeController.php
+namespace App\Controllers;
 
 use App\services\ApiService;
-use App\models\Product;
+use App\Models\Product;
 
 class HomeController
 {

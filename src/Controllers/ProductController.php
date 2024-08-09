@@ -1,10 +1,10 @@
 <?php
-// src/controllers/ProductController.php
+// src/Controllers/ProductController.php
 
-namespace Controllers;
+namespace App\Controllers;
 
 use App\services\ApiService;
-use App\models\Product;
+use App\Models\Product;
 
 class ProductController
 {
@@ -14,7 +14,7 @@ class ProductController
         $this->apiService = new ApiService();
     }
 
-    public function show($productId) {
+    public function showProduct($productId) {
         if (!is_numeric($productId) || $productId <= 0) {
             $this->handleError(400, "Invalid product ID.");
         }
