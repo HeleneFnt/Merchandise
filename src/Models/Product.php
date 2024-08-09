@@ -1,5 +1,5 @@
 <?php
-namespace App\models;
+namespace App\Models;
 
 // Product class creation with attributes
 class Product
