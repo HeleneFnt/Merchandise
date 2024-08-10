@@ -28,7 +28,7 @@ if ($requestUri === '/' || $requestUri === '/index.php') {
 } else {
     // 404 Page Not Found
     http_response_code(404);
-    require '../src/includes/errorheader.php';
-    require '../src/views/404.tpl.php';
-    require '../src/includes/errorfooter.php';
+    require_once '../src/includes/errorheader.php';
+    require_once '../src/views/404.tpl.php';
+    require_once '../src/includes/errorfooter.php';
 }
