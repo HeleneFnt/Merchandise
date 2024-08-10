@@ -43,18 +43,20 @@ class CategoryController {
     private function mapToProduct($product) {
         return new Product(
             $product['id'],
-            htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8')
+            $product['title'],
+            $product['price'],
+            $product['description'],
+            $product['category'],
+            $product['image']
         );
     }
 
     private function renderView($categoryName, $products, $categories) {
         extract(compact('categoryName', 'products', 'categories'));
-        include __DIR__ . '/includes/header.php';
+        include __DIR__ . '/../includes/header.php';
         include __DIR__ . '/../views/category.tpl.php';
-        include __DIR__ . '/includes/footer.php';
+        include __DIR__ . '/../includes/footer.php';
+
+
     }
 }

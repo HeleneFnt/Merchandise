@@ -1,77 +1,68 @@
-.img-carousel {
-    max-height: 300px;
-    object-fit: cover;
-    width: 100%;
-}
-.owl-carousel .item {
-    padding: 15px;
-}
-.owl-carousel .thumb {
-    position: relative;
-}
-.owl-carousel .hover-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-.owl-carousel .thumb:hover .hover-content {
-    display: block;
+/* src/assets/css/product.css */
+
+/* Container for product image on product page */
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding-top: 50px;
+    /* Add margin to separate from other content */
 }
 
-/* src/assets/css/styles.css */
-
-/* Styles pour le pied de page */
-footer {
-    background-color: #f8f9fa; /* Couleur de fond du pied de page, ajustez selon vos besoins */
-    padding: 20px 0;
-    margin-top: 20px; /* Espacement au-dessus du pied de page */
+/* Ensure the product container is spaced properly */
+.product-container {
+    padding-top: 70px; /* Adjust this value to match the height of your header */
 }
 
-footer .container {
-    max-width: 1140px; /* Largeur maximale de la container, ajustez si nécessaire */
+/* Styling for product image */
+.product-image img {
+    width: 100%; /* Full width of container */
+    height: 100%; /* Full height of container */
+    object-fit: cover; /* Ensure the image covers the container */
 }
 
-footer .row {
-    margin-bottom: 20px;
+/* Product details styling */
+.product-title {
+    font-size: 2rem; /* Reduced size for better fit */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-top: 50px;
 }
 
-footer .first-item ul,
-footer .under-footer {
-    list-style: none;
-    padding: 0;
-}
-
-footer .first-item ul li {
-    margin-bottom: 10px;
-}
-
-footer .first-item ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-footer .under-footer {
-    text-align: center;
-}
-
-footer .under-footer p {
-    margin: 5px 0;
-}
-
-footer .under-footer a {
+.product-price {
+    font-size: 1.25rem; /* Slightly reduced size */
     color: #007bff;
-    text-decoration: none;
+    margin-bottom: 1rem;
 }
 
-footer .under-footer a:hover {
-    text-decoration: underline;
+.product-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
 }
 
-/* Styles supplémentaires pour la réactivité */
-@media (max-width: 991px) {
-    footer .row {
-        text-align: center;
-    }
+.product-category {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
 }
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
