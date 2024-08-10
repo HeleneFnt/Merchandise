@@ -58,6 +58,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Autres bibliothèques JavaScript -->
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                items: 3, // Number of items to display
+                autoplay: true,
+                autoplayTimeout: 5000, // 5 seconds
+                smartSpeed: 1000 // Transition speed
+            });
+        });
+    </script>
+
     <script src="/assets/js/accordions.js"></script>
     <script src="/assets/js/datepicker.js"></script>
     <script src="/assets/js/scrollreveal.min.js"></script>

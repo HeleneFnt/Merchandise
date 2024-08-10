@@ -24,33 +24,36 @@ ini_set('display_errors', 1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <title>Merchandise</title>
-<!-- My CSS Styles to adjust style -->
-    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+<!--    <link rel="stylesheet" href="/assets/css/styles.css">-->
     <link rel="stylesheet" href="/assets/css/font-awesome.css">
     <link rel="stylesheet" href="/assets/css/templatemo-hexashop.css">
     <link rel="stylesheet" href="/assets/css/owl-carousel.css">
     <link rel="stylesheet" href="/assets/css/lightbox.css">
-
 </head>
 <body>
 
-<!--TODO : FOLLOWING AREA TO PERSONNALIZE : link, img, presentation because directly taken from bootstrap theme-->
-<!-- ***** Header Area Start ***** -->
+<!-- Header Area Start -->
 <header class="header-area header-sticky">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
+                    <!-- Logo Start -->
                     <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png">
+                        <img src="assets/images/logo.png" alt="Logo">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
+                    <!-- Logo End -->
+                    <!-- Menu Start -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="#men">Men's</a></li>
@@ -79,9 +82,10 @@ ini_set('display_errors', 1);
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
-                    <!-- ***** Menu End ***** -->
+                    <!-- Menu End -->
                 </nav>
             </div>
         </div>
     </div>
 </header>
+
