@@ -49,36 +49,22 @@ ini_set('display_errors', 1);
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- Logo Start -->
-                    <a href="index.html" class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/images/logo.png" alt="Logo">
                     </a>
                     <!-- Logo End -->
                     <!-- Menu Start -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                        <li class="scroll-to-section"><a href="#women">Women's</a></li>
-                        <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                        <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
                         <li class="submenu">
                             <a href="javascript:;">Pages</a>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="single-product.html">Single Product</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="/category/jewelery">Jewelery</a></li>
+                                <li><a href="/category/electronics">Electronics</a></li>
+                                <li><a href="/category/men's%20clothing">Men's Clothing</a></li>
+                                <li><a href="/category/women's%20clothing">Women's Clothing</a></li>
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="javascript:;">Features</a>
-                            <ul>
-                                <li><a href="#">Features Page 1</a></li>
-                                <li><a href="#">Features Page 2</a></li>
-                                <li><a href="#">Features Page 3</a></li>
-                                <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                            </ul>
-                        </li>
-                        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-                    </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

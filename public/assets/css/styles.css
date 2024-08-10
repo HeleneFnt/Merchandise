@@ -1,0 +1,68 @@
+/* src/assets/css/product.css */
+
+/* Container for product image on product page */
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding-top: 50px;
+    /* Add margin to separate from other content */
+}
+
+/* Ensure the product container is spaced properly */
+.product-container {
+    padding-top: 70px; /* Adjust this value to match the height of your header */
+}
+
+/* Styling for product image */
+.product-image img {
+    width: 100%; /* Full width of container */
+    height: 100%; /* Full height of container */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Product details styling */
+.product-title {
+    font-size: 2rem; /* Reduced size for better fit */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-top: 50px;
+}
+
+.product-price {
+    font-size: 1.25rem; /* Slightly reduced size */
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.product-category {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
