@@ -12,19 +12,24 @@
             $imageUrl = htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8');
             $title = htmlspecialchars($product->title, ENT_QUOTES, 'UTF-8');
             $price = htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8');
+            $productId = htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); // Assure-toi que chaque produit a un ID unique
             ?>
             <div class="item">
-                <div class="thumb">
-                    <img src="<?= $imageUrl ?>" alt="<?= $title ?>">
-                </div>
-                <div class="down-content">
-                    <h4><?= $title ?></h4>
-                    <span>$<?= $price ?></span>
-                </div>
+                <!-- Lien vers la page de détails du produit -->
+                <a href="/product/<?= $productId ?>" class="product-link">
+                    <div class="thumb">
+                        <img src="<?= $imageUrl ?>" alt="<?= $title ?>">
+                    </div>
+                    <div class="down-content">
+                        <h4><?= $title ?></h4>
+                        <span>$<?= $price ?></span>
+                    </div>
+                </a>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
+
 <!-- Display Categories -->
 <h2 class="mt-5">Categories</h2>
 <div class="row">
